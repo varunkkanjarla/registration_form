@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    background-color: #edeaf1;
+}
+.container {
+    background-color: white;
+    width: 500px;
+    padding: 25px;
+    margin: 50px auto 0;
+    border-top: 5px solid blue;
+    box-shadow: 5px 5px 7px rgb(0, 0, 0, 0.5);
+}
+.container h2 {
+    font-size: 24px;
+    line-height: 24px;
+    padding: 30px;
+    text-align: center;
+}
+.input-name {
+    width: 90%;
+    position: relative;
+    margin: 20px auto;
+}
+.lock {
+    padding: 8px;
+}
+.name {
+    width: 45%;
+    padding: 8px 0 8px 40px;
+}
+.input-name span {
+    margin-left: 35px;
+}
+ .text-name {
+    width: 100%;
+    padding: 8px 0 8px 40px;
+ }
+
+ .input-name i {
+    position: absolute;
+    font-size: 18px;
+    color: blue;
+    padding: 8px;
+}
+.email {
+    padding: 8px;
+}
+.text-name, .name {
+    border: 1px solid #cccccc;
+    outline: none;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
+    color: #7b7b7b;
+}
+.text-name:hover, .name:hover, .gender:hover{
+    background-color: #e2e1e1;
+}
+.text-name:focus, .name:focus {
+    border: 1px solid blue;
+}
+.gender {
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    padding: 0px 15px;
+    cursor: pointer;
+    border: 1px sloid #e2e1e1;
+    color: #7b7b7b;
+}
+.gender::-ms-expand{
+    display: none;
+}
+.gender:hover, .gender:focus {
+    border-top-color: blue;
+}
+.check {
+    margin-right: 15px;
+    position: relative;
+}
+.check::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+    vertical-align: -2px;
+    border: 2px solid #cccccc;
+    padding: 2.5px;
+    background-color: transparent;
+    background-clip: content-box;
+    transition: all 0.2s ease;
+}
+.check::after {
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+    content: "";
+    height: 20px;
+    left: 2px;
+    position: absolute;
+    top: 7px;
+    transform: scaleX(-1) rotate(135deg);
+    transform-origin: left top;
+    width: 7px;
+    display: none;
+
+}
+.check-button{
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.check-button:hover +.check::before{
+    border-color: blue;
+
+}
+.check-button:checked +.check::before {
+    border-color: green;
+}
+.check-button:checked +.check::after {
+    animation: check 0.2s ease 0s running;
+    display: block;
+    width: 7px;
+    height: 20px;
+    border-color: green;
+}
+@keyframes check {
+    0%{height: 0; width: 0;}
+    25%{height: 0; width: 7;}
+    50%{height: 20; width: 7;}
+}
+.button {
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    height: 35px;
+    line-height: 35px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.button:hover {
+    background-color: green;
+}
+.upload-button {
+    cursor: pointer;
+    height: 35px;
+    line-height: 35px;
+    width: 47%;
+    border: #3e3d3d;
+    outline: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.indicator {
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.indicator span{
+    text-align: center;
+    width: 50%;
+    height: 50%;
+    background: red;
+    border-radius: 5px;
+    position: relative;
+}
+.indicator span.medium {
+    margin: 0 3px;
+}
+.indicator span.weak {
+    background-color: red;
+}
+.indicator span.medium{
+    background-color: orange;
+}
+.indicator span.strong {
+    background-color: green;
+}

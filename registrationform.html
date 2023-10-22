@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration form </title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <div class="form-container">
+            <form>
+<!--FIRST & LAST NAME -->
+                <div class="input-name">
+                    <i class="fa fa-user"></i>
+                    <input type="text" placeholder="Fist Name" class="name">
+                    <span>
+                        <i class="fa fa-user"></i>
+                        <input type="text" placeholder="Last Name" class="name">
+                    </span>
+                </div>
+<!--EMAIL -->
+                <div class="input-name">
+                    <i class="fa fa-envelope email"></i>
+                    <input type="email" placeholder="email" class="text-name">
+                </div>
+<!--PASSWORD -->
+                <div class="input-name">
+                    <i class="fa fa-lock"></i>
+                    <input onkeyup="trigger()" type="password" placeholder="password" class="text-name">
+                </div>
+                <div class="indicator">
+                    <span class="week"></span>
+                    <span class="medium"></span>
+                    <span class="strong"></span>
+                </div>
+                <script>
+                    const indicator = document.querySelector(".indicator");
+                    const input = document.querySelector("input");
+                    const weak = document.querySelector(".weak");
+                    const medium = document.querySelector(".medium");
+                    const strong = document.querySelector(".strong");
+                    function trigger() {
+                        if(input.value !=""){
+                            indicator.style.display = "block";
+                            indicator.style.display = "flex";
+                        }else{
+                            indicator.style.display = "none";
+                        }
+                    }
+                </script>
+                <div class="input-name">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" placeholder="confirm password" class="text-name">
+                </div>
+<!--DATE OF BIRTH-->
+                <div class="input-name"> 
+                    <i class="fa fa-calendar"></i>
+                    <label for="dob"></label>
+                    <input type="date" placeholder="dd/mm/yyyy" class="name">
+                </div>
+<!--GENDER -->
+                <div class="input-name">
+                    <select class="gender">
+                        <option>Select a gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Transgender</option>
+                    </select>
+                    <div class="arrow"></div>
+                </div>
+<!--UPLOAD BUTTON -->
+                <div class="input-name">
+                    <i class="fa fa-upload"></i>
+                    <input type="submit" class="upload-button" value="Upload">
+                </div>
+<!--CHECK BOX -->
+                <div class="input-name">
+                    <input type="checkbox" id="cb" class="check-button">
+                    <label for="cb" class="check">I accept all the terms and conditions</label>
+                </div>
+<!--SUBMIT BUTTON-->
+                <div class="input-name">
+                    <input type="submit" class="button" value="Register">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>
